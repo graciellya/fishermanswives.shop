@@ -32,7 +32,7 @@ function App() {
         <Silk />
       </div>
 
-      {/* GooeyNav (Fixed to the top-right) */}
+      {/* GooeyNav */}
       <div style={{ position: "fixed", top: 20, left: 580, zIndex: 2 }}>
         <GooeyNav
           items={items}
@@ -69,7 +69,7 @@ function App() {
           id="game-box"
           style={{
             height: "60vh",
-            marginTop: "20rem", // reduced for less gap
+            marginTop: "20rem", 
             marginBottom: 0,
             marginLeft: "-1rem",
             padding: "0 4vw",
@@ -98,7 +98,7 @@ function App() {
               animation: "float 10s ease-in-out infinite"
             }}>
               <img 
-                src="/src/assets/box.png" 
+                src="/box.png" 
                 alt="Game Box"
               />
             </div>
@@ -132,7 +132,7 @@ function App() {
               alignItems: "center"
             }}>
               <img
-                src="src/assets/target.png"
+                src="/target.png"
                 alt="Target"
                 style={{
                   height: "200px",
@@ -143,7 +143,7 @@ function App() {
                 }}
               />
               <img
-                src="src/assets/amazon.png"
+                src="/amazon.png"
                 alt="Amazon"
                 style={{
                   height: "200px",
@@ -154,7 +154,7 @@ function App() {
                 }}
               />
               <img
-                src="src/assets/walmart.png"
+                src="/walmart.png"
                 alt="Walmart"
                 style={{
                   height: "200px",
@@ -197,17 +197,17 @@ function App() {
               Take control of your destiny
             </h2>
             <p style={{
-              fontSize: "3rem",
+              fontSize: "2rem",
               lineHeight: "1.6",
-              opacity: "0.8",
-              maxWidth: "500px"
+              opacity: "0.6",
+              maxWidth: "500px",
             }}>
               Every choice matters in this dark tale of revenge and redemption
             </p>
           </div>
 
           <img
-            src="src/assets/cards.png"
+            src="/cards.png"
             alt="Featured"
             style={{
               maxWidth: "700px",
@@ -226,21 +226,22 @@ function App() {
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(10px)",
               borderRadius: "30px",
-              padding: "3rem",
+              padding: "2rem",
               maxWidth: "800px",
               width: "90%",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
               display: "flex",
               flexDirection: "column",
-              gap: "2rem",
+              gap: "0rem",
               margin: "0 auto",
             }}>
               <h2 style={{
-                fontSize: "5rem",
+                fontSize: "4rem",
                 fontWeight: "300",
-                letterSpacing: "0.1em"
-              }}>About</h2>
+                letterSpacing: "0.1em",
+                fontFamily: "Arial, sans-serif",
+              }}>About Our Game</h2>
               <p style={{
                 fontSize: "1.8rem",
                 lineHeight: "1.8",
@@ -278,8 +279,7 @@ function App() {
                     fontSize: "1.9rem", 
                     marginBottom: "0.5rem",
                     fontWeight: "600"
-                  }}>Subscribe to our 
-                  newsletter</h3>
+                  }}>"A masterpiece of strategy and deception." -Chris Cocks</h3>
                 </div>
               </div>
             </div>
@@ -344,10 +344,10 @@ function App() {
             maxWidth: "1200px"
           }}>
             {[
-              { name: "Gracielly Abreu", role: "Computer Science", quote: "i love fish" },
-              { name: "Ingrid Nordberg", role: "Design", quote: "i love kombucha" },
-              { name: "Izzy Meyerson", role: "Computer Science", quote: "i love paris" },
-              { name: "Stella Li", role: "Design", quote: "i love tiger parents" }
+              { name: "Gracielly Abreu", role: "Computer Science '26", },
+              { name: "Ingrid Nordberg", role: "Design '25",  },
+              { name: "Izzy Meyerson", role: "Computer Science '25",  },
+              { name: "Stella Li", role: "Design '25",}
             ].map((member, index) => (
               <div key={index} style={{
                 background: "rgba(255, 255, 255, 0.05)",
@@ -367,7 +367,7 @@ function App() {
                   width: "120px",
                   height: "120px",
                   borderRadius: "60px",
-                  background: `url('src/assets/team/gracielly.png') no-repeat center center / cover`,
+                  background: `url('/gracielly.png') no-repeat center center / cover`,
                   marginBottom: "1rem"
                 }} />
                 <h3 style={{
@@ -380,10 +380,7 @@ function App() {
                   fontSize: "1.1rem",
                   marginBottom: "1rem"
                 }}>{member.role}</p>
-                <p style={{
-                  opacity: "0.6",
-                  fontStyle: "italic"
-                }}>"{member.quote}"</p>
+                
               </div>
             ))}
           </div>

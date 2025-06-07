@@ -161,13 +161,15 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
-    const activeLi = navRef.current.querySelectorAll("li")[
-      activeIndex
-    ] as HTMLElement;
-    if (activeLi) {
-      updateEffectPosition(activeLi);
-      textRef.current?.classList.add("active");
-    }
+
+    // Wait for DOM update before measuring
+    setTimeout(() => {
+      const activeLi = navRef.current!.querySelectorAll("li")[activeIndex] as HTMLElement;
+      if (activeLi) {
+        updateEffectPosition(activeLi);
+        textRef.current?.classList.add("active");
+      }
+    }, 0);
 
     const resizeObserver = new ResizeObserver(() => {
       const currentActiveLi = navRef.current?.querySelectorAll("li")[
@@ -180,28 +182,42 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 
     resizeObserver.observe(containerRef.current);
     return () => resizeObserver.disconnect();
-  }, [activeIndex]);
+  }, [activeIndex, items.length]);
 
   return (
     <div className="gooey-nav-container" ref={containerRef}>
-      <nav>
-        <ul ref={navRef}>
-          {items.map((item, index) => (
-            <li
-              key={index}
-              className={activeIndex === index ? "active" : ""}
-              onClick={(e) => handleClick(e, index)}
-            >
-              <a href={item.href} onKeyDown={(e) => handleKeyDown(e, index)}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <span className="effect filter" ref={filterRef} />
-      <span className="effect text" ref={textRef} />
-    </div>
+    <nav>
+      <ul ref={navRef}>
+        {items.map((item, index) => (
+          <li
+            key={index}
+  className={activeIndex === index ? "active" : ""}
+  onClick={e => {
+    handleClick(e, index);
+    const hash = item.href;
+    if (hash.startsWith("#")) {
+      e.preventDefault();
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        window.history.replaceState(null, "", hash);
+      } else if (hash === "#home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.history.replaceState(null, "", hash);
+      }
+    }
+  }}
+>
+  <a href={item.href} onKeyDown={e => handleKeyDown(e, index)}>
+    {item.label}
+  </a>
+</li>
+        ))}
+      </ul>
+    </nav>
+    <span className="effect filter" ref={filterRef} />
+    <span className="effect text" ref={textRef} />
+  </div>
   );
 };
 

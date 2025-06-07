@@ -1,7 +1,6 @@
 import Silk from "./components/Silk";
 import GooeyNav from "./components/GooeyNav";
 import EnterAnimation from "./components/EnterAnimation";
-import { image } from "framer-motion/client";
 
 const pieces: string[] = [
     "/comp1.png",
@@ -89,7 +88,7 @@ function App() {
           }}
         >
           <h1 className="hero-title">
-            fishersman's wives
+            fishersmen's wives
           </h1>
         </div> 
 

@@ -239,9 +239,7 @@ some may choose to form sapphic alliances with other players, co-conspiring to k
             borderRadius: "12px",
             transition: "transform 0.3s ease",
             cursor: "pointer",
-            "&:hover": {
-              transform: "scale(1.05)",
-            }
+            
           }}
               />
             ))}
@@ -249,7 +247,7 @@ some may choose to form sapphic alliances with other players, co-conspiring to k
         </section>
 
         {/* Quote Section */}
-        <div style={{ marginTop: "-20rem", fontSize: "2rem",  maxWidth: "100%", borderRadius: "20px", padding: "2rem", background: "rgba(255, 255, 255, 0)", backdropFilter: "blur(10px)", border: "5px solid rgba(8, 4, 72, 0.58)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.73)", maxWidth: "800px", margin: "2rem auto", textAlign: "center", fontFamily: "'Libre Baskerville', sans-serif", color: "white", opacity: "0.9", fontStyle: "italic" }}>
+        <div style={{ marginTop: "-20rem", fontSize: "2rem", borderRadius: "20px", padding: "2rem", background: "rgba(255, 255, 255, 0)", backdropFilter: "blur(10px)", border: "5px solid rgba(8, 4, 72, 0.58)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.73)", maxWidth: "800px", margin: "2rem auto", textAlign: "center", fontFamily: "'Libre Baskerville', sans-serif", color: "white", opacity: "0.9", fontStyle: "italic" }}>
         <QuoteCallout
           quote="Refreshingly original and fun, Fishermen’s Wives is a game that will have you laughing and scheming with friends for hours."
           author="Stanford CS247G Student"
@@ -278,9 +276,7 @@ some may choose to form sapphic alliances with other players, co-conspiring to k
             borderRadius: "12px",
             transition: "transform 0.3s ease",
             cursor: "pointer",
-            "&:hover": {
-              transform: "scale(1.05)",
-            }
+            
           }}
               />
             ))}
@@ -350,9 +346,7 @@ some may choose to form sapphic alliances with other players, co-conspiring to k
             borderRadius: "12px",
             transition: "transform 0.3s ease",
             cursor: "pointer",
-            "&:hover": {
-              transform: "scale(1.05)",
-            }
+            
           }}
               />
             ))}

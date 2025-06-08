@@ -88,7 +88,7 @@ function App() {
           }}
         >
           <h1 className="hero-title">
-            fishersmen's wives
+            fishermen's wives
           </h1>
         </div> 
 
